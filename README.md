@@ -1,2 +1,1 @@
-# COOPCOIN ETHEREUM CONTRACTS AND RESOURCES #
-
+# CoopCoin Ethereum resources

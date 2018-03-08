@@ -1,0 +1,24 @@
+{
+  "name": "cc_ethereum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://velasquez@bitbucket.org/coop_coin/cc_ethereum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/coop_coin/cc_ethereum#readme",
+  "dependencies": {
+    "drizzle-react": "^1.0.1",
+    "zeppelin-solidity": "1.7.0"
+  }
+}
