@@ -10,6 +10,8 @@ contract  AssetToken is ERC721Token {
     uint256 uid;
   }
 
+  function AssetToken() ERC721Token("CoopCoin", "abt") {}
+
   function mint(address  _to, uint256 _uid) public {
     uint256 tokenId = createAsset(_uid);
     _mint(_to, tokenId);

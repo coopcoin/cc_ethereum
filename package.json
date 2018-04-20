@@ -23,6 +23,9 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/coop_coin/cc_ethereum#readme",
   "dependencies": {
+    "jquery": "^3.3.1",
+    "truffle-contract": "^3.0.5",
+    "truffle-hdwallet-provider": "0.0.3",
     "zeppelin-solidity": "^1.8.0"
   }
 }
