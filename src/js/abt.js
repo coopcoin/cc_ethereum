@@ -80,7 +80,19 @@ function getTokens(){
   assetTokenContract.deployed().then((inst) => {
     return inst.balanceOf(ethAccount);
   }).then((b) => {
-    balance = b.s;
+    balance = b.toString();
     $("#balanceOf").html(balance);
+    for (var i=0; i<balance; i++) {
+      $("#mytokens").append("<tr id=tokenIndex_" + i +"><td>" + i + "</td></tr>");
+      getTokenOfOwnerByIndex(i);
+    }
+  });
+}
+
+function getTokenOfOwnerByIndex(index) {
+  assetTokenContract.deployed().then((inst) => {
+    return inst.tokenOfOwnerByIndex(ethAccount, index);
+  }).then((tokenId) => {
+    $("#tokenIndex_" + index).append("<td>" + tokenId + "</td>");
   });
 }
