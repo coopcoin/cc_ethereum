@@ -94,5 +94,22 @@ function getTokenOfOwnerByIndex(index) {
     return inst.tokenOfOwnerByIndex(ethAccount, index);
   }).then((tokenId) => {
     $("#tokenIndex_" + index).append("<td>" + tokenId + "</td>");
+    $("#tokenIndex_" + index).append("<td><form id=transferForm><input type=text id=transferToAddress_" + tokenId + "><button type=button onclick=handleTransferButton(" + tokenId + ")>transfer</button></form></td>");
+  });
+}
+
+function handleTransferButton(tokenId) {
+  var to = $("#transferToAddress_" + tokenId).val();
+  console.log("Transfer token id: " + tokenId + " to addres: " + to);
+  transfer(ethAccount, to, tokenId)
+}
+
+function transfer(from, to, tokenId){
+  assetTokenContract.deployed().then(inst => {
+    return inst.safeTransferFrom(from, to, tokenId);
+  }).then(recipt => {
+    console.log(recipt);
+  }).catch(e => {
+    console.log(e);
   });
 }
