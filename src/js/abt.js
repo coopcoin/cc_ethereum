@@ -73,6 +73,23 @@ function init() {
       $("#contractAddress").html(inst.address);
     });
     getTokens();
+    listenForEvents();
+  });
+}
+
+function listenForEvents() {
+  function handleEvent(error, result){
+    if (error) {
+      console.log(error);
+      return;
+    }
+    handleTransferEvent(result);
+  }
+  assetTokenContract.deployed().then(inst => {
+    inst.Transfer({_from:ethAccount}, {fromBlock:0,
+      toBlock: 'latest'}).watch(handleEvent);
+    inst.Transfer({_to:ethAccount}, {fromBlock:0,
+      toBlock: 'latest'}).watch(handleEvent);
   });
 }
 
@@ -112,4 +129,12 @@ function transfer(from, to, tokenId){
   }).catch(e => {
     console.log(e);
   });
+}
+
+function handleTransferEvent(log) {
+  from = log.args._from;
+  to = log.args._to;
+  tokenId = log.args._tokenId;
+  txHash = log.transactionHash;
+  $("#tx_history").append("<tr><td>Transfer</td><td>" + from + "</td><td>" + to + "</td><td>" + tokenId + "</td><td>" + txHash + "</td></tr>");
 }
