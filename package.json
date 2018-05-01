@@ -7,6 +7,7 @@
     "test": "test"
   },
   "scripts": {
+    "ganache": "ganache-cli -p 7545 -i 100 --db=./.ganache-db -m coopcoin",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +27,7 @@
     "jquery": "^3.3.1",
     "truffle-contract": "^3.0.5",
     "truffle-hdwallet-provider": "0.0.3",
-    "zeppelin-solidity": "^1.8.0"
+    "zeppelin-solidity": "^1.8.0",
+    "ganache-cli": "^6.0.3"
   }
 }
