@@ -4,32 +4,43 @@
   </head>
   <body>
     <h1> CoopCoin Asset Based Tokens Wallet (<span id=network></span>)</h1>
+      <h3> Ethereum Account: <span id=ethAccount> loading... </span></h3>
     <br>
     <h3> ABT Contract Address: <span id=contractAddress> loading... </span></h3>
-    <h3> Ethereum Account: <span id=ethAccount> loading... </span></h3>
     <h3> ABTs count for this account: <span id=balanceOf> loading... </span></h3>
     <br>
     <h4> My ABT Tokens </h4>
     <table id=mytokens border=1>
-      <tr>
-        <td> Index </td>
-        <td> Token ID </td>
-        <td> Transfer </td>
-      </tr>
+      <thead>
+        <tr>
+          <td> Token ID </td>
+          <td> Transfer </td>
+        </tr>
+      </thead>
+      <tbody></tbody>
     </table>
     <br>
     <h4> Transaction History </h4>
     <table id=tx_history border=1>
-      <tr>
-        <td> event </td>
-        <td> from </td>
-        <td> to </td>
-        <td> token ID </td>
-        <td> Transaction </td>
-      </tr>
+      <thead>
+        <tr>
+          <td> event </td>
+          <td> from </td>
+          <td> to </td>
+          <td> token ID </td>
+          <td> Transaction </td>
+        </tr>
+      </thead>
+      <tbody></tbody>
     </table>
   </body>
   <!-- js imports -->
   <script src="node_modules/jquery/dist/jquery.js"></script>
+  <!-- This exposes the library as a global variable: ethers -->
+<script src="https://cdn.ethers.io/scripts/ethers-v3.min.js"
+        charset="utf-8"
+        type="text/javascript">
+</script>
   <script src="js/abt.js"></script>
+
 </html>
