@@ -28,6 +28,7 @@
     "truffle-contract": "^3.0.5",
     "truffle-hdwallet-provider": "0.0.3",
     "zeppelin-solidity": "^1.8.0",
-    "ganache-cli": "^6.0.3"
+    "ganache-cli": "^6.0.3",
+    "promptly": "^3.0.3"
   }
 }
