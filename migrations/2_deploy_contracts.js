@@ -1,5 +1,5 @@
-var AssetToken = artifacts.require("./AssetToken.sol");
+var ABTRC100Token = artifacts.require("./ABTRC100Token.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(AssetToken);
+  deployer.deploy(ABTRC100Token);
 };
