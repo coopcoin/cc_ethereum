@@ -7,7 +7,8 @@ const abisPath = path.join(libPath, 'abis');
 const addressesPath = path.join(libPath, 'addresses');
 
 const files = [
-  'AssetToken'
+  'AssetToken',
+  'PriceFeed'
 ];
 
 files.forEach((fileName) => {
