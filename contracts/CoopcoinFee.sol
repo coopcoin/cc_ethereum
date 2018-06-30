@@ -10,7 +10,7 @@ contract CoopcoinFee is Ownable {
     return fee;
   }
 
-  function setBalance(uint256 newFee) public onlyOwner {
+  function setFee(uint256 newFee) public onlyOwner {
     fee = newFee;
   }
 }
