@@ -47,4 +47,8 @@ contract  ABTRC100Token is ERC721Token {
     string _invoiceId) public pure returns(bytes32) {
       return keccak256(abi.encodePacked(_countryCode, _sellerTaxId, _invoiceId));
   }
+
+  function burn(address _owner, uint256 _tokenId) public {
+    _burn(_owner, _tokenId);
+  }
 }
